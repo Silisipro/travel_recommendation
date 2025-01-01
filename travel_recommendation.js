@@ -59,9 +59,17 @@ const recommendations = [];
                         itemDiv.appendChild(timeInfo);
                     }
 
-                    itemDiv.appendChild(image);
+                     const viewButton = document.createElement('button');
+                     viewButton.className = 'view-btn';
+                     viewButton.textContent = 'View';
+                     viewButton.addEventListener('click', () => {
+                         alert(`You clicked View for ${item.name}`);
+                     });
+
+                     itemDiv.appendChild(image);
                     itemDiv.appendChild(title);
                     itemDiv.appendChild(description);
+                    itemDiv.appendChild(viewButton);
 
                     resultDiv.appendChild(itemDiv);
                 });
@@ -81,6 +89,58 @@ const recommendations = [];
         document.querySelector('.search-container input').value = '';
         document.getElementById('result').innerHTML = '';
     });
+
+    const style = document.createElement('style');
+    style.textContent = `
+        .result-item {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            background-color: white;
+
+        }
+
+        .result-item img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        .result-item h3 {
+            margin: 10px 0;
+            font-size: 1.5em;
+        }
+
+        .result-item p {
+            margin: 10px 0;
+            font-size: 1em;
+            line-height: 1.5;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .view-btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #008080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        .view-btn:hover {
+            background-color: #006666;
+        }
+    `;
+    document.head.appendChild(style);
+
 
 
 
