@@ -342,7 +342,6 @@ body {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #ff0000;
   padding: 0.5rem;
   display: flex;
   flex-direction: column;

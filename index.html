@@ -12,20 +12,21 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <img src="logo.png" alt="TravelBloom Logo">
+                <img src="pc4.png" alt="TravelBloom Logo">
                 <span>TravelBloom</span>
             </div>
             
             <div class="nav-links">
-                <a href="/travel_recommendation">Home</a>
-                <a href="/travel_recommendation/travel_recommendation_about.html">About Us</a>
-                <a href="/travel_recommendation/travel_recommendation_contact.html">Contact Us</a>
+                <a href="/index.html">Home</a>
+                <!-- <a href="/travel_recommendation/travel_recommendation_about.html">About Us</a> -->
+                <a href="/travel_recommendation_about.html">About Us</a>
+                <a href="/travel_recommendation_contact.html">Contact Us</a>
             </div>
 
             <div class="search-container">
                 <input type="text" placeholder="Enter a destination or keyword">
-                <button class="search-btn">Search</button>
-                <button class="clear-btn">Clear</button>
+                <button class="search-btn" onclick="recommendationsSearch()">Search</button>
+                <button class="clear-btn" onclick="btnClear()">Clear</button>
             </div>
         </div>
     </nav>
@@ -57,7 +58,7 @@
                 </svg>
             </a>
         </div>
-
+        <div id="result"></div>
         <!-- Hero Content -->
         <div class="hero-content">
             <h1>
@@ -73,5 +74,7 @@
             <button class="book-btn">BOOK NOW</button>
         </div>
     </section>
+<script src="./travel_recommendation.js"></script>
+
 </body>
 </html>
